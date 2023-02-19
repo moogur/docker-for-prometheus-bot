@@ -5,11 +5,3 @@
 ## Репозиторий бота
 
 - https://github.com/inCaller/prometheus_bot
-
-## Environment
-
-Для роботы необходимы переменные
-
-```js
-TELEGRAM_TOKEN // токен для телеграма
-```
