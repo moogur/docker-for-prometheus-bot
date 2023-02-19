@@ -3,7 +3,7 @@ ARG ALPINE_VERSION=3.16
 ARG GOLANG_VERSION=1.20.1
 
 # First stage to build
-FROM golang:${GOLANG_VERSION}-alpine${ARG_NODE_VERSION} as builder
+FROM golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION} as builder
 
 RUN cd / && \
     apk update && \
@@ -14,7 +14,7 @@ RUN cd / && \
     CGO_ENABLED=0 GOOS=linux go build -v -a -installsuffix cgo -o prometheus_bot
 
 # Second stage to run
-FROM alpine:${ARG_NODE_VERSION}
+FROM alpine:${ALPINE_VERSION}
 
 COPY --from=builder /prometheus_bot/prometheus_bot /
 
