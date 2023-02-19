@@ -22,4 +22,4 @@ RUN apk add --no-cache ca-certificates tzdata
 
 EXPOSE 9087
 
-ENTRYPOINT ["echo $TELEGRAM_TOKEN >> token && /prometheus_bot -token-from token"]
+ENTRYPOINT ["/bin/sh echo $TELEGRAM_TOKEN >> /token && /prometheus_bot -token-from /token"]
