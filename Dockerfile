@@ -1,6 +1,6 @@
 # Set versions
-ARG ALPINE_VERSION=3.16
-ARG GOLANG_VERSION=1.20.1
+ARG ALPINE_VERSION=3.18
+ARG GOLANG_VERSION=1.20.5
 
 # First stage to build
 FROM golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION} as builder
